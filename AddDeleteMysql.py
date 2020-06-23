@@ -22,18 +22,18 @@ print("Database version :{}".format(data))
 
 # -----插入语句-----
 
-# insert_sql="insert into tb_user(userName, birth) value(%s,%s)"
-#
-# person_info=[['罗伊','1994-12-12'],['李小海','1991-09-22']]
-#
-# for i in range(len(person_info)):
-#     param=tuple(person_info[i])
-#     data=cursor.execute(insert_sql,param)
-#     if data>0:
-#         print("添加数据成功！\n")
-# #提交事务
-# conn_db.commit()
-# conn_db.close()
+insert_sql="insert into tb_user(userName, birth) value(%s,%s)"
+
+person_info=[['罗伊','1994-12-12'],['李小海','1991-09-22']]
+
+for i in range(len(person_info)):
+    param=tuple(person_info[i])
+    data=cursor.execute(insert_sql,param)
+    if data>0:
+        print("添加数据成功！\n")
+#提交事务
+conn_db.commit()
+conn_db.close()
 
 
 
@@ -72,21 +72,21 @@ print("Database version :{}".format(data))
 
 
 
-
-# -----删除语句-----
-
-delete_sql="delete from tb_user where id='%s' "%(5)
-cursor.execute(delete_sql)
-
-select_sql="select * from tb_user"
-
-cursor.execute(select_sql)
-#获取所有数据
-data=cursor.fetchall()
-for i in range(len(data)):
-    print(data[i])
-conn_db.commit()
-conn_db.close()
-
-person_info=[['罗伊','1994-12-12'],['李小海','1991-09-22']]
-print(type(person_info))
+#
+# # -----删除语句-----
+#
+# delete_sql="delete from tb_user where id='%s' "%(5)
+# cursor.execute(delete_sql)
+#
+# select_sql="select * from tb_user"
+#
+# cursor.execute(select_sql)
+# #获取所有数据
+# data=cursor.fetchall()
+# for i in range(len(data)):
+#     print(data[i])
+# conn_db.commit()
+# conn_db.close()
+#
+# person_info=[['罗伊','1994-12-12'],['李小海','1991-09-22']]
+# print(type(person_info))

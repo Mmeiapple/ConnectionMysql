@@ -16,7 +16,7 @@ class OperationMysql():
          person_info = [[name1, birth1], [name2, birth2]]
          for i in range(len(person_info)):
              params=tuple(person_info[i])
-         self.cursor.execute(sql_info,params)
+             self.cursor.execute(sql_info,params)
          self.conn_db.commit()
          self.conn_db.close()
 
@@ -53,6 +53,6 @@ class OperationMysql():
 
 if __name__=="__main__":
     data=OperationMysql(host='172.16.20.145',user='xudt',passwd='Xudt@253',db='test',port=3306,charset='utf8')
-    data.insert_sql('张凤','1998-09-01','张怜','1990-07-01')
+    data.insert_sql('丽雪','1997-07-01','张怜','1990-07-01')
     print("sdas")
 
